@@ -46,7 +46,7 @@ Certifique-se de que você tem o **Docker** e o **Docker Compose** instalados em
 1. **Clonar o repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/vadetaxi-case.git
+git clone https://github.com/andersonxtrindade/vadetaxi.git
 cd vadetaxi-case
 ```
 
