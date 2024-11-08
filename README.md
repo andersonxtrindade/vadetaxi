@@ -47,7 +47,7 @@ Certifique-se de que você tem o **Docker** e o **Docker Compose** instalados em
 
 ```bash
 git clone https://github.com/andersonxtrindade/vadetaxi.git
-cd vadetaxi-case
+cd vadetaxi
 ```
 
 2. **Construir as imagens e iniciar os containers:**
