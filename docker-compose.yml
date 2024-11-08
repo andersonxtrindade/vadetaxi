@@ -1,0 +1,39 @@
+version: "3.9"
+
+services: 
+  database:
+    image: postgres
+    container_name: database-vadetaxi
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=321
+      - POSTGRES_DB=corridastaxi
+    volumes:
+      - pgdata:/data/postgres
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    container_name: nodejs-vadetaxi
+    restart: always
+    ports:
+      - 3000:3000 
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=database
+      - DB_USER=postgres
+      - DB_PASSWORD=321
+      - DB_NAME=corridastaxi
+    depends_on:
+      - database
+    volumes:
+      - .:/app
+    command: /bin/sh -c "npx sequelize-cli db:migrate && npm start"
+
+volumes:
+  pgdata:
+    driver: local
