@@ -86,16 +86,3 @@ passengers (Passageiros)
 drivers (Motoristas)
 rides (Corridas)
 O banco de dados é inicializado e migrado automaticamente ao subir os containers.
-
-## Testes Automatizados
-O projeto inclui testes automatizados usando o Jest. Para rodar os testes, basta usar o comando:
-
-```bash
-docker exec -it nodejs-vadetaxi npm test
-```
-Os testes garantem que os seguintes casos sejam validados:
-
-Cadastro de passageiros e motoristas.
-Criação de corridas.
-Alteração do status das corridas.
-Validação de erros (por exemplo, se o passageiro não existir ao tentar criar uma corrida).
